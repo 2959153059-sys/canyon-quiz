@@ -4,6 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0b1424">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="峡谷人格档案">
 <title>峡谷玩家风格测评</title>
 <meta name="description" content="15 道题加一场位置小游戏，测出你在峡谷里到底是什么成分。百分制打分，和好友比分。粉丝自制，与游戏官方无关。">
 <meta property="og:title" content="峡谷玩家风格测评">
@@ -3869,6 +3873,11 @@ $('btn-mute').onclick = () => {
 const hashMatch = location.hash.match(/^#duo-([a-z]{2,3}(?:-\d{1,3})?)$/i);
 if (hashMatch) { const pc = parseCode(hashMatch[1]); if (pc) { state.friend = pc.key; state.friendScore = pc.score; } }
 try { Sound.on = localStorage.getItem(MUTE_KEY) !== '1'; } catch (e) {}
+// 微信内置浏览器：试着收起底部的前进后退栏（微信的老接口，部分版本不认，不生效也没影响）；顶部标题栏是微信自己的，网页去不掉
+(() => {
+  const hide = () => { try { window.WeixinJSBridge.call('hideToolbar'); } catch (e) {} };
+  if (window.WeixinJSBridge) hide(); else document.addEventListener('WeixinJSBridgeReady', hide, false);
+})();
 // 开场加载页：等字体准备好（最多 2.2 秒、至少 0.7 秒），进度条走满再淡出；4 秒后无论如何都撤掉
 (() => {
   const sp = $('splash'), fill = $('sp-fill'), t0 = performance.now();
