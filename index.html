@@ -914,8 +914,8 @@ button:focus-visible, input:focus-visible { outline: 2px solid var(--gold); outl
 </div>
 
 <script>
-// 分享链接：在 Claude 里打开时用 Artifact 地址；独立网页版没有 window.claude，直接用当前网址，换托管也不用改
-const LINK = window.claude ? 'https://claude.ai/artifact/XQNfJFBwxHqMxQ58XAWDoE' : location.href.split(/[?#]/)[0];
+// 分享链接：在 Claude 里打开时也指向公开的网页版；网页版本身没有 window.claude，直接用当前网址，换托管也不用改
+const LINK = window.claude ? 'https://2959153059-sys.github.io/canyon-quiz/' : location.href.split(/[?#]/)[0];
 const ROLE_ORDER = ['top', 'jungle', 'mid', 'adc', 'sup'];
 const ROLE_LETTER = { top: 'T', jungle: 'J', mid: 'M', adc: 'A', sup: 'S' };
 const STYLE_LETTER = { a: 'G', s: 'W' }; // 攻 / 稳
