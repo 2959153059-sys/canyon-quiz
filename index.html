@@ -625,6 +625,50 @@ button:focus-visible, input:focus-visible { outline: 2px solid var(--gold); outl
 .desc-block .note { border-left-color: var(--gold); }
 .desc-block .note.roast { border-left-color: var(--muted); }
 .desc-block b.lbl { display: block; font-size: 12px; letter-spacing: .14em; color: var(--muted); font-weight: 500; }
+/* 性格、风格、缺点分析 */
+.kv { display: grid; }
+.kv-row { display: grid; grid-template-columns: 4.6em minmax(0, 1fr); gap: 10px; padding: 10px 0; border-top: 1px solid rgba(43, 63, 96, .7); font-size: 14px; line-height: 1.65; }
+.kv-row:first-child { border-top: 0; padding-top: 0; }
+.kv-row:last-child { padding-bottom: 0; }
+.kv-row > b { color: var(--gold); font-weight: 500; font-size: 13px; line-height: 1.8; }
+.evi { padding: 12px 14px; border-left: 3px solid var(--c); background: rgba(11, 20, 36, .45); border-radius: 0 6px 6px 0; font-size: 13px; line-height: 1.7; }
+.evi b.lbl { display: block; font-size: 12px; letter-spacing: .14em; color: var(--muted); font-weight: 500; }
+.flaws { display: grid; gap: 10px; }
+.flaw { padding: 13px 14px; border-radius: 6px; background: rgba(11, 20, 36, .45); border: 1px solid var(--line); }
+.flaw h4 { margin: 0 0 9px; display: flex; align-items: center; gap: 8px; font-family: var(--font-display); font-weight: 400; font-size: 19px; line-height: 1.2; }
+.flaw h4 i { flex: none; width: 22px; height: 22px; display: grid; place-items: center; border-radius: 3px; background: rgba(255, 75, 62, .16); color: #ff8a80; font-style: normal; font-size: 14px; }
+.flaw dl { margin: 0; display: grid; gap: 7px; }
+.flaw dl > div { display: grid; grid-template-columns: 3.3em minmax(0, 1fr); gap: 8px; font-size: 14px; line-height: 1.6; }
+.flaw dt { color: var(--muted); font-size: 12px; line-height: 1.9; }
+.flaw dd { margin: 0; min-width: 0; }
+.flaw .fix { padding-top: 8px; border-top: 1px dashed var(--line); }
+.flaw .fix dt, .flaw .fix dd { color: var(--gold); }
+.perfect-panel { border-color: rgba(230, 187, 96, .75); background: linear-gradient(160deg, rgba(230, 187, 96, .2), transparent 58%), linear-gradient(180deg, rgba(27, 44, 73, .94), rgba(16, 27, 47, .94)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08), 0 0 26px rgba(230, 187, 96, .16); }
+.perfect-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+.perfect-head b { font-family: var(--font-brush); font-weight: 400; font-size: 36px; line-height: 1.1; color: var(--gold-hi); text-shadow: 0 0 14px rgba(230, 187, 96, .5); }
+.perfect-head span { font-size: 13px; color: var(--muted); }
+.perfect-none { font-size: 15px; }
+.perfect-none b { color: var(--gold); font-weight: 500; }
+.tag.perfect { color: #2a1d05; border-color: var(--gold-hi); background: linear-gradient(90deg, #f6dc9c, var(--gold)); font-weight: 500; }
+.dex-item.perfect { border-color: rgba(230, 187, 96, .7); }
+.dex-item.perfect::before { content: "完美"; position: absolute; top: -7px; left: -5px; z-index: 1; font-size: 11px; padding: 0 6px; border-radius: 3px; background: linear-gradient(90deg, #f6dc9c, var(--gold)); color: #2a1d05; }
+.goto-analysis { width: 100%; }
+.cite { position: relative; display: inline-block; margin: 0 1px 0 2px; min-width: 15px; padding: 0 3px; border: 0; border-radius: 3px; background: var(--gold-soft); color: var(--gold); font: inherit; font-size: 10px; line-height: 14px; vertical-align: super; cursor: pointer; }
+.cite::after { content: ""; position: absolute; inset: -11px -7px; }
+.cite-pop { position: fixed; z-index: 60; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); max-width: 560px; margin: 0 auto; padding: 14px 42px 14px 14px; border-radius: 8px; background: #0e1930; border: 1px solid var(--gold); box-shadow: 0 12px 34px rgba(0, 0, 0, .6); font-size: 13px; line-height: 1.6; overflow-wrap: anywhere; }
+.cite-pop b { color: var(--gold); font-weight: 500; }
+.cite-pop p { margin: 4px 0; }
+.cite-pop a { color: var(--gold); }
+.cite-pop .x { position: absolute; top: 4px; right: 4px; width: 38px; height: 38px; border: 0; background: none; color: var(--muted); font-size: 22px; line-height: 1; cursor: pointer; }
+.trust summary { display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 28px; font-family: var(--font-display); font-size: 21px; cursor: pointer; list-style: none; }
+.trust summary::-webkit-details-marker { display: none; }
+.trust summary::after { content: "展开"; flex: none; font-family: var(--font-body); font-size: 12px; color: var(--gold); }
+.trust[open] summary::after { content: "收起"; }
+.trust-list { margin-top: 12px; gap: 9px; line-height: 1.65; }
+.trust-list b { display: block; font-weight: 500; color: var(--gold); }
+.refs-title { margin: 16px 0 8px; font-family: var(--font-display); font-weight: 400; font-size: 17px; }
+.refs { margin: 0; padding-left: 1.7em; display: grid; gap: 7px; font-size: 12px; line-height: 1.6; color: var(--muted); overflow-wrap: anywhere; }
+.refs a { color: var(--gold); }
 .radar-wrap { display: grid; gap: 12px; }
 .radar-wrap svg { width: 100%; max-width: 300px; height: auto; justify-self: center; }
 .scores { display: grid; gap: 8px; }
@@ -962,7 +1006,7 @@ const PERSONAS = {
   'jungle-a': { title: '野区猎手', slogan: '哪里有残血，哪里就有我。',
     tags: ['#残血收割', '#反野狂人', '#闪现没了就上'],
     desc: '你嗅觉灵敏、出手果断，喜欢在对面最松懈的时候突然出现。高风险高回报，你最享受一击得手的那一下。',
-    quote: '上！他没闪了！', moment: '反野一路杀穿，对面打野整局不敢进自家野区。',
+    quote: '上！TA没闪了！', moment: '反野一路杀穿，对面打野整局不敢进自家野区。',
     roast: '看到残血就控制不住自己，追着追着就进了对面泉水。',
     tip: '出手前数一数对面人数，留个后手，你会从“刺激”变成“稳赢”。',
     heroes: [['澜', '能标记追击残血，嗅觉最灵'], ['镜', '镜像位移，操作上限高'], ['李白', '多段位移，大招期间无法被选中']],
@@ -1018,7 +1062,7 @@ const PERSONAS = {
   'sup-s': { title: '守护天使', slogan: '我在，你就在。',
     tags: ['#人形护盾', '#视野担当', '#队伍保姆'],
     desc: '你细心、靠谱，最开心的是看到队友因为你活下来。挡技能、做视野、提醒危险，你是队伍里最让人安心的存在。',
-    quote: '后面有人，往回走！', moment: '残血队友被三个人追，你一个人挡下所有技能把他救了回来。',
+    quote: '后面有人，往回走！', moment: '残血队友被三个人追，你一个人挡下所有技能把TA救了回来。',
     roast: '保护队友太投入，自己的血量经常是全队最低。',
     tip: '偶尔也顾一下自己，活着的辅助才能保护更多人。',
     heroes: [['张飞', '大招变身给队友加护盾'], ['蔡文姬', '回血量足，团战续航'], ['瑶', '附身队友，给护盾和控制']],
@@ -1029,54 +1073,54 @@ const PERSONA_ORDER = ROLE_ORDER.flatMap(r => [r + '-a', r + '-s']);
 // 抽象搞笑层：鉴定印章、发疯语录、离谱战绩、队友弹幕
 // nf 是「峡谷成分表」：五项合计 100%，最后一项固定为 0（显示成“未检出”），mix / keep / warn 是配料、保质期、注意事项
 const MEME = {
-  'top-a':    { stamp: '单挑成瘾', crazy: '我不是在单挑，就是在去单挑的路上。',
-                stats: [['发起单挑', '∞ 次'], ['回头看家', '0 次'], ['队友打龙时你在', '对抗路单挑']],
-                danmu: ['上路那哥们又在一打二了', '他说马上来，然后又单杀了一个', '能处，有架他是真打'],
-                nf: [['单挑欲', 46], ['越塔的勇气', 22], ['嘴硬', 18], ['残血兴奋剂', 14], ['回头看家', 0]],
-                mix: '胆子、闪现、自信、过量的自信', keep: '打赢对线之前', warn: '食用后可能导致家被偷' },
+  'top-a':    { stamp: '单挑之王', crazy: '我不是在单挑，就是在去单挑的路上。',
+                stats: [['发起单挑', '∞ 次'], ['单挑胜率', '高到对面换路'], ['顺手偷塔', '每局两座']],
+                danmu: ['上路那位又在一打二了', 'TA说马上来，然后又单杀了一个', '能处，有架TA是真打'],
+                nf: [['单挑欲', 46], ['越塔的勇气', 22], ['底气', 18], ['残血兴奋剂', 14], ['对线失误', 0]],
+                mix: '胆子、闪现、判断、刚好够用的自信', keep: '整局有效', warn: '食用后对面边路可能换路' },
   'top-s':    { stamp: '人形防御塔', crazy: '塔在人在，塔没了我先回城。',
                 stats: [['承受伤害', '全队第一'], ['主动出击', '几乎没有'], ['塔下站桩', '一整局']],
-                danmu: ['稳得像在上班打卡', '对面都残血了他还在犹豫', '有他在，心里踏实'],
+                danmu: ['稳得像在上班打卡', '对面都残血了TA还在犹豫', '有TA在，心里踏实'],
                 nf: [['抗压', 41], ['塔下站桩', 27], ['犹豫', 19], ['逆风兜底', 13], ['主动出击', 0]],
                 mix: '血量、护甲、耐心、更多的血量', keep: '防御塔还在的时候', warn: '长期站桩，可能与防御塔合为一体' },
   'jungle-a': { stamp: '残血雷达', crazy: '看见残血那一刻，闪现就不归我管了。',
                 stats: [['追残血距离', '一整张地图'], ['误入对面泉水', '亿点点'], ['反野成功率', '看心情']],
-                danmu: ['野爹又追进泉水了', '他脑子里只有两个字：上啊', '人头没拿到，泉水倒是去过了'],
+                danmu: ['野爹又追进泉水了', 'TA脑子里只有两个字：上啊', '人头没拿到，泉水倒是去过了'],
                 nf: [['追残血本能', 44], ['反野的冲动', 23], ['闪现交得快', 17], ['误入泉水', 16], ['刷野的耐心', 0]],
                 mix: '嗅觉、位移、一往无前、泉水的气息', keep: '看到下一个残血之前', warn: '追击途中请注意对面泉水' },
-  'jungle-s': { stamp: '峡谷报时员', crazy: '龙还有 28 秒，你们在干嘛？我真的会谢。',
-                stats: [['计时精度', '精确到秒'], ['队友听指挥', '30%'], ['开局计划书', '写了三页']],
-                danmu: ['他的语音比闹钟还准', '照他说的打，真赢了', '就是有点啰嗦'],
-                nf: [['掐表计时', 38], ['语音指挥', 27], ['龙坑蹲守', 19], ['没人听的心累', 16], ['随缘乱逛', 0]],
-                mix: '秒表、地图、计划书、一声叹气', keep: '精确到秒', warn: '队友可能不按计划走，请自备速效救心丸' },
-  'mid-a':    { stamp: '空大艺术家', crazy: '技能我交了，交给了对面的坦克。',
-                stats: [['一套带走', '玄学'], ['草丛蹲人', '半局'], ['技能命中坦克', '每一次']],
-                danmu: ['那一下真的很帅（没中）', '中了是神，空了是人', '草丛里那个人是他'],
-                nf: [['爆发欲', 39], ['草丛蹲人', 24], ['技能全交', 21], ['自我感动', 16], ['留一手', 0]],
-                mix: '法力、角度、自信、对面的坦克', keep: '一套技能（约 3 秒）', warn: '技能可能全部命中坦克' },
+  'jungle-s': { stamp: '峡谷报时员', crazy: '龙还有 28 秒，对面还不知道自己要输了。',
+                stats: [['计时精度', '精确到秒'], ['队友听指挥', '全队照做'], ['开局计划书', '写了三页']],
+                danmu: ['TA的语音比闹钟还准', '照TA说的打，真赢了', '听TA的，准没错'],
+                nf: [['掐表计时', 38], ['语音指挥', 27], ['龙坑蹲守', 19], ['全队听令', 16], ['随缘乱逛', 0]],
+                mix: '秒表、地图、计划书、一句“集合”', keep: '精确到秒', warn: '对面可能发现自己一直在你的计划里' },
+  'mid-a':    { stamp: '爆发艺术家', crazy: '一套技能，对面已经在看复活倒计时了。',
+                stats: [['一套带走', '基本功'], ['草丛蹲人', '半局'], ['技能命中后排', '每一次']],
+                danmu: ['那一下真的很帅（中了）', 'TA基本没空过', '草丛里那个人是TA'],
+                nf: [['爆发欲', 39], ['草丛蹲人', 24], ['技能全交', 21], ['高光回放', 16], ['空大', 0]],
+                mix: '法力、角度、自信、对面的后排', keep: '一套技能（约 3 秒）', warn: '对面后排请保持距离' },
   'mid-s':    { stamp: '资深等等党', crazy: '等一下……好了，团打完了。',
                 stats: [['等待时机', '一万年'], ['大招命中', '三个起步'], ['出手速度', '慢半拍']],
-                danmu: ['冷静得有点可怕', '他说等等，我们等没了', '一个大招救了全队'],
+                danmu: ['冷静得有点可怕', 'TA说等等，我们等没了', '一个大招救了全队'],
                 nf: [['等时机', 45], ['冷静分析', 24], ['一冻三的梦想', 17], ['慢半拍', 14], ['先手出击', 0]],
                 mix: '耐心、控制、思考、更多的思考', keep: '等到团战结束', warn: '等待时间过长，团战可能已经打完' },
   'adc-a':    { stamp: '人头收集癖', crazy: '人头不分你我，统统都是我的。',
                 stats: [['抢人头速度', '0.1 秒'], ['人头被抢后', '心态崩'], ['追残血追到', '自己残血']],
-                danmu: ['别跟他抢，他记仇', '输出是真高，人头是真多', '活着的时候是真的猛'],
+                danmu: ['别跟TA抢，TA记仇', '输出是真高，人头是真多', '活着的时候是真的猛'],
                 nf: [['抢人头', 43], ['输出欲', 25], ['追残血', 18], ['被抢后的怨气', 14], ['让人头', 0]],
                 mix: '普攻、攻速、占有欲、一点点记仇', keep: '下一个人头之前', warn: '请勿与本品抢人头，后果自负' },
-  'adc-s':    { stamp: '再等一件装备', crazy: '别急，等我出完装——诶，水晶怎么炸了？',
-                stats: [['出完装', '比赛结束后'], ['补刀数', '全场最高'], ['前期存在感', '查无此人']],
-                danmu: ['前期像隐身，后期像天神', '他一直在说再等等', '大后期是真能打'],
-                nf: [['猥琐发育', 42], ['补刀执念', 26], ['等装备', 19], ['后期幻想', 13], ['前期存在感', 0]],
-                mix: '金币、耐心、六神装、一点点侥幸', keep: '出完装以后（如果比赛还没结束）', warn: '等装备期间，水晶可能爆炸' },
-  'sup-a':    { stamp: '峡谷孤勇者', crazy: '我开了！……人呢？',
-                stats: [['开团速度', '比队友快 3 秒'], ['开团前看队友', '开完才看'], ['闪现状态', '永远在冷却']],
-                danmu: ['他先上了，我们还在买装备', '开得是好，就是早了点', '胆子比塔还大'],
-                nf: [['开团冲动', 45], ['闪现勇气', 23], ['回头找队友', 17], ['“人呢？”', 15], ['等队友到齐', 0]],
-                mix: '胆子、控制、一声“上”、空荡荡的身后', keep: '冲进人堆之前', warn: '开团前请确认身后有人' },
+  'adc-s':    { stamp: '后期天花板', crazy: '别急，出完装这局就结束了。',
+                stats: [['出完装', '刚刚好'], ['补刀数', '全场最高'], ['前期送人头', '查无此人']],
+                danmu: ['前期像隐身，后期像天神', 'TA说再等等，是真的等到了', '大后期是真能打'],
+                nf: [['稳健发育', 42], ['补刀执念', 26], ['等装备', 19], ['后期兑现', 13], ['前期失误', 0]],
+                mix: '金币、耐心、六神装、一点点算计', keep: '比赛结束之前', warn: '对面请在 15 分钟前解决比赛' },
+  'sup-a':    { stamp: '团战发动机', crazy: '我开了，你们收人头就行。',
+                stats: [['开团速度', '比对面快 3 秒'], ['开团前看队友', '每次都看'], ['开团命中率', '高得离谱']],
+                danmu: ['TA一开我们就跟', '时机准得吓人', '胆子比塔还大'],
+                nf: [['开团嗅觉', 45], ['闪现勇气', 23], ['带头冲锋', 17], ['全队跟上', 15], ['白给', 0]],
+                mix: '胆子、控制、一声“上”、跟上的四个队友', keep: '这波团打完之前', warn: '对面请注意站位' },
   'sup-s':    { stamp: '峡谷保姆', crazy: '你别死，要死我先死。',
                 stats: [['挡技能', '数不清'], ['自己血量', '全队最低'], ['收到道谢', '0 次']],
-                danmu: ['我的奶妈', '有他在我敢乱冲', '辛苦了，下把还选你'],
+                danmu: ['我的奶妈', '有TA在我敢乱冲', '辛苦了，下把还选你'],
                 nf: [['护崽本能', 44], ['挡技能', 24], ['做视野', 18], ['默默心碎', 14], ['自己的血量', 0]],
                 mix: '护盾、治疗、视野、无私的爱', keep: '队友还活着的时候', warn: '本品会牺牲自己，请善待你的辅助' }
 };
@@ -1090,7 +1134,7 @@ const BAD = {
     roast: '对面边路的经济，有一半是你送的。', tip: '先算算伤害再上，打不过就先忍一会儿，活着才有下一次单挑。',
     stamp: '越塔必死', crazy: '我不是在送，我是在给对面一点信心。',
     stats: [['越塔成功率', '约等于 0'], ['复活读秒', '倒背如流'], ['给对面送的经济', '一件大件']],
-    danmu: ['他又越塔了，又没了', '对面边路：谢谢老板', '勇气可嘉，下次别了'],
+    danmu: ['TA又越塔了，又没了', '对面边路：谢谢老板', '勇气可嘉，下次别了'],
     nf: [['上头', 48], ['越塔冲动', 27], ['复活等待', 15], ['自我安慰', 10], ['伤害计算', 0]],
     mix: '勇气、更多的勇气、一点点技术', keep: '冲到塔下之前', warn: '本品可能导致对面边路提前成型' },
   'top-s': { title: '塔下雕像', slogan: '我不动，对面也别想动我……吧。',
@@ -1100,7 +1144,7 @@ const BAD = {
     roast: '队友已经按了三次挂机举报，你说你在“运营”。', tip: '塔不会跑，队友会倒。听到集合，先去打团再说。',
     stamp: '疑似挂机', crazy: '我没挂机，我只是在用心守护这座塔。',
     stats: [['移动距离', '约 3 米'], ['参团率', '个位数'], ['被举报挂机', '每局一次']],
-    danmu: ['他还在线吗', '塔：其实我可以自己待着', '队友打团时他在思考人生'],
+    danmu: ['TA还在线吗', '塔：其实我可以自己待着', '队友打团时TA在思考人生'],
     nf: [['原地站桩', 47], ['塔的执念', 26], ['神游', 17], ['“我在运营”', 10], ['参团意愿', 0]],
     mix: '耐心、静止、一座塔、满满的心安', keep: '直到这座塔被推（然后换下一座）', warn: '长期站桩，可能被系统判定为挂机' },
   'jungle-a': { title: '人头外卖', slogan: '你点的人头，已送达。',
@@ -1120,7 +1164,7 @@ const BAD = {
     roast: '整局参团率不到两成，野怪倒是一只没漏。', tip: '刷完一组野就看一眼地图，哪路能抓就去哪路，节奏比经济更重要。',
     stamp: '从不抓人', crazy: '你们先顶住，我还有三组野。',
     stats: [['刷野效率', '全服第一'], ['参团率', '19%'], ['队友呼救次数', '数不过来']],
-    danmu: ['我们是不是没有打野', '野怪：今天又是你', '他的经济很高，然后呢'],
+    danmu: ['我们是不是没有打野', '野怪：今天又是你', 'TA的经济很高，然后呢'],
     nf: [['刷野执念', 46], ['路线规划', 24], ['装没听见', 18], ['自我感动', 12], ['抓人', 0]],
     mix: '野怪、路线图、耳机静音、一颗平静的心', keep: '刷完下一组野怪之前', warn: '队友可能会怀疑你们没有打野' },
   'mid-a': { title: '一套白给', slogan: '一套技能，结束的是我自己。',
@@ -1130,7 +1174,7 @@ const BAD = {
     roast: '你的技能命中率，主要靠对面自己撞上来。', tip: '别急着把技能全放完，先放一个试探，留一个保命，你会活得久很多。',
     stamp: '空大慈善家', crazy: '技能是好技能，就是打在了空气上。',
     stats: [['技能命中率', '随缘'], ['交完技能后', '原地罚站'], ['自信程度', '永远满格']],
-    danmu: ['那一套好帅，可惜一个没中', '他的技能打出去了，人没了', '下次先瞄准一下'],
+    danmu: ['那一套好帅，可惜一个没中', 'TA的技能打出去了，人没了', '下次先瞄准一下'],
     nf: [['表现欲', 44], ['技能乱交', 25], ['空气命中率', 19], ['事后嘴硬', 12], ['瞄准', 0]],
     mix: '法力、自信、空气、对面的坦克', keep: '技能交完之前（约 1 秒）', warn: '本品的技能可能全部打在空气上' },
   'mid-s': { title: '中路游客', slogan: '支援？等我清完这波线……再清一波。',
@@ -1140,17 +1184,17 @@ const BAD = {
     roast: '你的支援从不缺席，只是总比团战晚一步。', tip: '清完一波线就动身，团战等不了你，早到一秒都是好的。',
     stamp: '团战观众', crazy: '马上到，马上到——诶，你们怎么都黑屏了？',
     stats: [['到达团战', '永远晚 10 秒'], ['清线速度', '一流'], ['说“马上到”', '每局 20 次']],
-    danmu: ['他说马上到，我们等了一辈子', '中路的兵线很干净', '团打完了，他来了'],
+    danmu: ['TA说马上到，我们等了一辈子', '中路的兵线很干净', '团打完了，TA来了'],
     nf: [['清线执念', 43], ['“马上到”', 26], ['犹豫', 18], ['认错路', 13], ['准时', 0]],
     mix: '兵线、兵线、更多的兵线', keep: '团战结束之前（总是赶不上）', warn: '本品的支援速度可能晚于团战结束' },
   'adc-a': { title: '残血追梦', slogan: '追着追着，我就残了。',
     tags: ['#人头执念', '#血条见底', '#一追到底'],
     desc: '你对人头的渴望无人能比，残血的敌人在你眼里就是一块肥肉。问题是你追的时候从来不看自己的血，追到最后，人头没拿到，自己先倒了。',
-    quote: '他残了！……我也残了。', moment: '丝血追了对面半张地图，最后被对面一个回头普攻带走。',
+    quote: 'TA残了！……我也残了。', moment: '丝血追了对面半张地图，最后被对面一个回头普攻带走。',
     roast: '你追人的路线，就是你送人头的路线。', tip: '追之前看一眼自己的血量，残血的人头让给队友，活着才能一直输出。',
     stamp: '追杀反被杀', crazy: '人头就在眼前，我的血条去哪了？',
     stats: [['追杀距离', '半张地图'], ['自己的血量', '从不关注'], ['人头到手率', '看对面回不回头']],
-    danmu: ['他又追进去了', '别追了，求你了', '人头没拿到，泉水倒是挺近'],
+    danmu: ['TA又追进去了', '别追了，求你了', '人头没拿到，泉水倒是挺近'],
     nf: [['人头执念', 46], ['追杀本能', 25], ['回头被杀', 17], ['不服', 12], ['看血量', 0]],
     mix: '普攻、贪心、一丝血、对面的回头', keep: '追到对面塔下之前', warn: '追击时请注意自己的血条' },
   'adc-s': { title: '永远发育', slogan: '等我六神装……比赛结束了？',
@@ -1160,7 +1204,7 @@ const BAD = {
     roast: '你的后期还没来，比赛先结束了。', tip: '有两件核心装备就可以跟团了，装备是用来打架的，不是用来收藏的。',
     stamp: '装备未成型', crazy: '我的后期很强，只是比赛等不到。',
     stats: [['补刀数', '全场第一'], ['团战伤害', '全场倒数'], ['“再等等”', '说了一整局']],
-    danmu: ['他的经济好高啊，人呢', '后期在哪，后期在哪', '水晶：我等不了了'],
+    danmu: ['TA的经济好高啊，人呢', '后期在哪，后期在哪', '水晶：我等不了了'],
     nf: [['补兵', 45], ['等装备', 26], ['后期幻想', 17], ['躲团战', 12], ['参团', 0]],
     mix: '金币、更多的金币、一个遥远的后期', keep: '比赛结束之前（通常等不到）', warn: '本品发育期间，水晶可能已经爆炸' },
   'sup-a': { title: '一人成团', slogan: '开团！……开在了对面五个人中间。',
@@ -1170,17 +1214,17 @@ const BAD = {
     roast: '你开的团，队友总是事后才知道。', tip: '开团前看一眼队友在哪，打个信号，等大家都到了再冲。',
     stamp: '身后无人', crazy: '我开团从来不看身后，所以身后也从来没人。',
     stats: [['开团次数', '每分钟一次'], ['队友跟上', '偶尔'], ['阵亡速度', '全场最快']],
-    danmu: ['他又一个人开了', '别开了别开了', '开得是好，人呢'],
+    danmu: ['TA又一个人开了', '别开了别开了', '开得是好，人呢'],
     nf: [['开团冲动', 47], ['闪现上头', 24], ['孤军奋战', 18], ['回头找人', 11], ['等队友', 0]],
     mix: '闪现、控制、空荡荡的身后', keep: '冲进人堆之前', warn: '开团前请回头确认身后有人' },
   'sup-s': { title: '人形挂件', slogan: '你去哪我去哪，你倒了我也……倒了。',
     tags: ['#跟屁虫', '#存在感为零', '#一起黑屏'],
-    desc: '你很想保护队友，于是全程紧紧跟着。可你只顾着跟，忘了做视野、忘了放技能，队友被抓的时候，你能做的只有陪他一起倒下。',
+    desc: '你很想保护队友，于是全程紧紧跟着。可你只顾着跟，忘了做视野、忘了放技能，队友被抓的时候，你能做的只有陪TA一起倒下。',
     quote: '我在呢，我一直在。', moment: '贴着射手跟了一整局，射手被抓的时候你就站在旁边，技能一个没放。',
     roast: '你跟得很紧，就是没帮上什么忙。', tip: '别只是跟着，危险来之前提醒一句，技能该放就放，保护不是陪着倒下。',
     stamp: '陪你阵亡', crazy: '我一直在你身边——包括你阵亡的时候。',
     stats: [['跟随距离', '0.5 米'], ['技能释放', '想不起来'], ['和队友一起阵亡', '每一次']],
-    danmu: ['他一直在，但好像没什么用', '我倒下的时候他就在旁边', '陪伴是最长情的告白（并没用）'],
+    danmu: ['TA一直在，但好像没什么用', '我倒下的时候TA就在旁边', '陪伴是最长情的告白（并没用）'],
     nf: [['跟随', 46], ['陪伴', 25], ['发呆', 17], ['一起阵亡', 12], ['放技能', 0]],
     mix: '陪伴、陪伴、还是陪伴', keep: '你还活着的时候（以及之后）', warn: '本品可能陪你一起阵亡' }
 };
@@ -1237,8 +1281,8 @@ const ROLE_QS = [
     ['给每个人倒水、夹菜、拍照的那个', 'sup'] ] },
   { scene: '被针对', q: '你连着被对面同一个人干掉两次，第一反应是？', opts: [
     ['不服，下次见面非得找回来', 'top'],
-    ['琢磨他的套路，提前在他必经的路上等他', 'jungle'],
-    ['等我技能全好了，一套让他记住我', 'mid'],
+    ['琢磨TA的套路，提前在TA必经的路上等TA', 'jungle'],
+    ['等我技能全好了，一套让TA记住我', 'mid'],
     ['先忍着，等我变强了再算账', 'adc'],
     ['在队伍里提醒一句：大家小心这个人', 'sup'] ] },
   { scene: '零花钱', q: '突然多了一笔零花钱，你会？', opts: [
@@ -1273,7 +1317,7 @@ const ROLE_QS = [
     ['给室友讲题，讲着讲着自己也会了', 'sup'] ] },
   { scene: '逆风', q: '比分落后一大截，你会？', opts: [
     ['先把我面前这个人打服再说', 'top'],
-    ['趁对面得意忘形，找机会偷他一波', 'jungle'],
+    ['趁对面得意忘形，找机会偷TA一波', 'jungle'],
     ['等一个机会，打出决定胜负的那一下', 'mid'],
     ['相信后期，慢慢磨，总能磨回来', 'adc'],
     ['先稳住大家，别吵架，吵架必输', 'sup'] ] },
@@ -2106,7 +2150,7 @@ function parseCode(str) {
 }
 function personaLabel(key) {
   const [role, st] = key.split('-');
-  return `${ROLES[role].name} · ${st === 'a' ? '进攻型' : '稳健型'}${isBad(key) ? ' · 下饭版' : ''}`;
+  return `${ROLES[role].name} · ${st === 'a' ? '进攻型' : '稳健型'}${isBad(key) ? ' · 下饭版' : ''}${isPerfect(key) ? ' · 完美' : ''}`;
 }
 function countUp(root) {
   root.querySelectorAll('[data-to]').forEach(el => {
@@ -2584,7 +2628,7 @@ const FXD = {
 const GAMES = {
   top: {
     name: '单挑拼刀', btn: '攻击', skill: '手速', color: '#e8694b',
-    tip: '对面在砍你，狂点「攻击」先把他打空。赢的时候你剩的血越多，分越高。',
+    tip: '对面在砍你，狂点「攻击」先把TA打空。赢的时候你剩的血越多，分越高。',
     init: () => ({ me: 100, foe: 100, hitAt: 0, hurtAt: 0, end: null, endAt: 0 }),
     draw(ctx, s, t, W, H, now) {
       const gy = H * .84, k = W / 330;
@@ -2868,7 +2912,7 @@ const GAMES = {
   },
   sup: {
     name: '护盾救人', btn: '护盾', skill: '反应', color: '#4cb8de', tap: true,
-    tip: '对面会突然瞄准一个队友（脚下亮红圈），立刻点他套盾。反应越快，分越高。',
+    tip: '对面会突然瞄准一个队友（脚下亮红圈），立刻点TA套盾。反应越快，分越高。',
     init: () => ({ target: -1, warnAt: 0, shield: -1, shieldAt: 0, blockAt: 0, hit: -1, hitAt: 0 }),
     draw(ctx, s, t, W, H, now) {
       const gy = H * .82, k = W / 330;
@@ -3095,7 +3139,7 @@ function computeResult(answers, meta) {
   return { counts, ranked, total: roleAns.length, aPct: Math.round(aCount / styleAns.length * 100), style, key, answers, score };
 }
 // 隐藏成就：按答题速度、改答案次数、答案分布和抢龙成绩解锁，每项为 [徽章字, 名称, 说明]
-const ACH_TOTAL = 13;
+const ACH_TOTAL = 14;
 function achievements(res) {
   const list = [], m = res.meta, st = res.answers.slice(ROLE_QS.length);
   if (m && m.spent > 0) {
@@ -3112,6 +3156,7 @@ function achievements(res) {
   list.push(st[st.length - 1] === 'a'
     ? ['赌', '考场赌神', '最后一道大题凭感觉写满，主打一个万一']
     : ['查', '检查狂魔', '最后 5 分钟还在检查前面的题，稳得可怕']);
+  if (isPerfect(res.key)) list.push(['冠', '完美人格', `${ROLES[res.ranked[0]].name}唯一的完美人格，20 种里只有 5 种`]);
   const g = m && GAMES[m.trial];
   if (g && res.score === 100) list.push(['巅', '峡谷之巅', `${g.name}考核满分，三次全是完美`]);
   else if (g && res.score === 0) list.push(['零', '零分达人', `${g.name}考核 0 分，对面都想加你好友`]);
@@ -3119,6 +3164,312 @@ function achievements(res) {
     ? ['清', '人间清醒', `你选了${ROLES[m.trial].name}考核，测评也说你是${ROLES[m.trial].name}，很有自知之明`]
     : ['偏', '自我认知偏差', `你觉得自己是${ROLES[m.trial].name}，测评说你是${ROLES[res.ranked[0]].name}`]);
   return list;
+}
+
+/* ---------- 性格与游戏风格分析 ----------
+   这里写的是“这类打法常见的倾向”，不是对个人的诊断。文献都核对过 DOI，并读过摘要或全文，依据和局限见 research/证据表.md。
+   位置和人格的实证关系很弱，心理学概念用到游戏里大多是类比，页面上的“这份分析靠谱吗”写明了这些 */
+const REFS = {
+  sajinovic2024: ['Šajinović & Bodroža (2024). Psychological traits of League of Legends players who prefer different positions and roles in the game. Primenjena psihologija, 17(4), 551–576.', '10.19090/pp.v17i4.2535'],
+  wang2019: ['Wang, Sapienza, Culotta & Ferrara (2019). Personality and behavior in role-based online games. IEEE Conference on Games.', '10.1109/cig.2019.8848027'],
+  horne2023: ['Horne, Furnham & Grover (2023). Narcissism, Big Five personality traits, and performance in temporary teams: An investigation of League of Legends. Journal of Electronic Gaming and Esports, 1(1).', '10.1123/jege.2022-0022'],
+  kim2017: ['Kim, Engel, Woolley, Lin, McArthur & Malone (2017). What makes a strong team? Using collective intelligence to predict team performance in League of Legends. CSCW, 2316–2329.', '10.1145/2998181.2998185'],
+  sapienza2018: ['Sapienza, Zeng, Bessi, Lerman & Ferrara (2018). Individual performance in team-based online games. Royal Society Open Science, 5(6), 180329.', '10.1098/rsos.180329'],
+  cregan2025: ['Cregan, Toth & Campbell (2025). The psychology of tilt: Understanding tilt and coping strategies in video games. Cyberpsychology, Behavior, and Social Networking, 28(6), 408–416.', '10.1089/cyber.2024.0320'],
+  yee2006: ['Yee (2006). Motivations for play in online games. CyberPsychology & Behavior, 9(6), 772–775.', '10.1089/cpb.2006.9.772'],
+  ryan2006: ['Ryan, Rigby & Przybylski (2006). The motivational pull of video games: A self-determination theory approach. Motivation and Emotion, 30(4), 344–360.', '10.1007/s11031-006-9051-8'],
+  nettle2006: ['Nettle (2006). The evolution of personality variation in humans and other animals. American Psychologist, 61(6), 622–631.', '10.1037/0003-066X.61.6.622'],
+  grant2011: ['Grant & Schwartz (2011). Too much of a good thing: The challenge and opportunity of the inverted U. Perspectives on Psychological Science, 6(1), 61–76.', '10.1177/1745691610393523'],
+  le2011: ['Le, Oh, Robbins, Ilies, Holland & Westrick (2011). Too much of a good thing: Curvilinear relationships between personality traits and job performance. Journal of Applied Psychology, 96(1), 113–133.', '10.1037/a0021016'],
+  crowe1997: ['Crowe & Higgins (1997). Regulatory focus and strategic inclinations: Promotion and prevention in decision-making. Organizational Behavior and Human Decision Processes, 69(2), 117–132.', '10.1006/obhd.1996.2675'],
+  higgins1997: ['Higgins (1997). Beyond pleasure and pain. American Psychologist, 52(12), 1280–1300.', '10.1037/0003-066X.52.12.1280'],
+  zuckerman2000: ['Zuckerman & Kuhlman (2000). Personality and risk-taking: Common biosocial factors. Journal of Personality, 68(6), 999–1029.', '10.1111/1467-6494.00124'],
+  whiteside2001: ['Whiteside & Lynam (2001). The Five Factor Model and impulsivity. Personality and Individual Differences, 30(4), 669–689.', '10.1016/S0191-8869(00)00064-7'],
+  carver1994: ['Carver & White (1994). Behavioral inhibition, behavioral activation, and affective responses to impending reward and punishment: The BIS/BAS Scales. Journal of Personality and Social Psychology, 67(2), 319–333.', '10.1037/0022-3514.67.2.319'],
+  moore2008: ['Moore & Healy (2008). The trouble with overconfidence. Psychological Review, 115(2), 502–517.', '10.1037/0033-295X.115.2.502'],
+  mezulis2004: ['Mezulis, Abramson, Hyde & Hankin (2004). Is there a universal positivity bias in attributions? Psychological Bulletin, 130(5), 711–747.', '10.1037/0033-2909.130.5.711'],
+  arkes1985: ['Arkes & Blumer (1985). The psychology of sunk cost. Organizational Behavior and Human Decision Processes, 35(1), 124–140.', '10.1016/0749-5978(85)90049-4'],
+  simons1999: ['Simons & Chabris (1999). Gorillas in our midst: Sustained inattentional blindness for dynamic events. Perception, 28(9), 1059–1074.', '10.1068/p281059'],
+  baumeister1984: ['Baumeister (1984). Choking under pressure. Journal of Personality and Social Psychology, 46(3), 610–620.', '10.1037/0022-3514.46.3.610'],
+  kivetz2006: ['Kivetz & Keinan (2006). Repenting hyperopia: An analysis of self-control regrets. Journal of Consumer Research, 33(2), 273–282.', '10.1086/506308'],
+  samuelson1988: ['Samuelson & Zeckhauser (1988). Status quo bias in decision making. Journal of Risk and Uncertainty, 1(1), 7–59.', '10.1007/BF00055564'],
+  ritov1990: ['Ritov & Baron (1990). Reluctance to vaccinate: Omission bias and ambiguity. Journal of Behavioral Decision Making, 3(4), 263–277.', '10.1002/bdm.3960030404'],
+  schwartz2002: ['Schwartz, Ward, Monterosso, Lyubomirsky, White & Lehman (2002). Maximizing versus satisficing: Happiness is a matter of choice. Journal of Personality and Social Psychology, 83(5), 1178–1197.', '10.1037/0022-3514.83.5.1178'],
+  chernev2015: ['Chernev, Böckenholt & Goodman (2015). Choice overload: A conceptual review and meta-analysis. Journal of Consumer Psychology, 25(2), 333–358.', '10.1016/j.jcps.2014.08.002'],
+  scheibehenne2010: ['Scheibehenne, Greifeneder & Todd (2010). Can there ever be too many options? A meta-analytic review of choice overload. Journal of Consumer Research, 37(3), 409–425.', '10.1086/651235'],
+  karau1993: ['Karau & Williams (1993). Social loafing: A meta-analytic review and theoretical integration. Journal of Personality and Social Psychology, 65(4), 681–706.', '10.1037/0022-3514.65.4.681'],
+  fritz1998: ['Fritz & Helgeson (1998). Distinctions of unmitigated communion from communion: Self-neglect and overinvolvement with others. Journal of Personality and Social Psychology, 75(1), 121–140.', '10.1037/0022-3514.75.1.121'],
+  mathieu2000: ['Mathieu, Heffner, Goodwin, Salas & Cannon-Bowers (2000). The influence of shared mental models on team process and performance. Journal of Applied Psychology, 85(2), 273–283.', '10.1037/0021-9010.85.2.273'],
+  edmondson1999: ['Edmondson (1999). Psychological safety and learning behavior in work teams. Administrative Science Quarterly, 44(2), 350–383.', '10.2307/2666999'],
+  endsley1995: ['Endsley (1995). Toward a theory of situation awareness in dynamic systems. Human Factors, 37(1), 32–64.', '10.1518/001872095779049543'],
+  judge2002: ['Judge, Bono, Ilies & Gerhardt (2002). Personality and leadership: A qualitative and quantitative review. Journal of Applied Psychology, 87(4), 765–780.', '10.1037/0021-9010.87.4.765'],
+  gollwitzer2006: ['Gollwitzer & Sheeran (2006). Implementation intentions and goal achievement: A meta-analysis of effects and processes. Advances in Experimental Social Psychology, 38, 69–119.', '10.1016/S0065-2601(06)38002-1'],
+  forer1949: ['Forer (1949). The fallacy of personal validation: A classroom demonstration of gullibility. Journal of Abnormal and Social Psychology, 44(1), 118–123.', '10.1037/h0059240']
+};
+// 每条路只有一个完美人格：进攻型 3 个、稳健型 2 个，这样选哪种风格都有机会
+const PERFECT = ['top-a', 'jungle-s', 'mid-a', 'adc-s', 'sup-a'];
+const isPerfect = k => PERFECT.includes(k);
+// 位置偏好的实证线索，数字都来自 Šajinović & Bodroža (2024) 的表 2、表 3
+const LANE_EVIDENCE = {
+  top: '在一项 3220 名《英雄联盟》玩家的调查里，偏好对抗路和「爱领导、爱抱团、外向」那组特质方向相反（载荷 −.43）；偏好战士型英雄的玩家情绪上没那么敏感，但也更想个人上位、没那么愿意合作。',
+  jungle: '在一项 3220 名《英雄联盟》玩家的调查里，打野最有两面性：一边和领导欲、外向、读懂别人有关（载荷 .65），一边也和不爱抱团、想个人上位有关（载荷 .44）。',
+  mid: '在一项 3220 名《英雄联盟》玩家的调查里，偏好中路的玩家（载荷 .76）平均更想个人上位、情绪上更敏感，也没那么谦逊。',
+  adc: '在一项 3220 名《英雄联盟》玩家的调查里，偏好射手型英雄的玩家（载荷 .44）平均更想个人上位、情绪上更敏感，作者推测和射手血薄、依赖队友保护有关。发育路这个位置本身的载荷（.37）没过作者定的门槛，所以这条线索比较弱。',
+  sup: '在一项 3220 名《英雄联盟》玩家的调查里，偏好辅助的线索最清楚（载荷 −.79 的反向一极）：更能感受别人的情绪、更谦逊、更愿意抱团；另一组结果里也带点领导倾向和外向（载荷 .44）。'
+};
+// 第二关测的是冒险还是保险，对应调节聚焦理论（类比，第二关不是正式量表）
+const STYLE_EVIDENCE = {
+  a: '第二关你偏向冒险的选项，接近心理学说的「促进聚焦」：更盯着能赢到什么，判断时宁可错抓，也不想错过机会。',
+  s: '第二关你偏向保险的选项，接近心理学说的「预防聚焦」：更盯着别丢掉什么，判断时宁可错过，也不想犯错。'
+};
+// traits 性格分析，style 游戏风格分析，每行 [标签, 内容, 文献]；flaws 缺点分析：n 名称、d 表现、w 为什么、f 改进（写成“如果……就……”）、r 文献
+const ANALYSIS = {
+  'top-a': {
+    traits: [['动机', '最看重「我能赢」的能力感，赢下对线本身就是奖励。', ['ryan2006']], ['压力之下', '越是一对一越冷静，被针对也不容易乱节奏。'], ['人际方式', '独立作战，用一条路的优势给全队减压，不靠语音刷存在感。']],
+    style: [['决策习惯', '先算伤害再动手，敢打，也知道什么时候收手。'], ['资源观', '自己吃线，但会把优势换成塔和牵制。'], ['团战定位', '带线牵制，或者从侧翼切入打断后排。'], ['逆风反应', '换成带线和拖时间，不和对面硬拼。']],
+    perfect: '敢打又有判断，单带和支援都做得到：把对面的注意力拉到自己身上，全队都轻松。',
+    keep: '保持看小地图的习惯，打赢对线后第一时间换成塔或龙。'
+  },
+  'top-s': {
+    traits: [['动机', '把「守住」当成成就，能给队伍兜底就满足。'], ['压力之下', '情绪稳，越被压越沉得住气，但容易闷头扛。'], ['人际方式', '可靠、不抢功，很少主动提要求。']],
+    style: [['决策习惯', '优先不出错，机会来了也要再确认一遍。'], ['资源观', '经济够用就行，更在意塔和线权。'], ['团战定位', '站前排吸收伤害，等队友先手。'], ['逆风反应', '死守拖时间，很少主动找机会。']],
+    flaws: [
+      { n: '现状偏差', d: '队友喊集合、对面残血，你还是更愿意待在熟悉的塔下。', w: '实验和真实选择都发现，人会不成比例地留在现状，哪怕换一个选择可能更好。', f: '如果对面两个人以上不在线上，就往前压一个身位或者去支援。', r: ['samuelson1988'] },
+      { n: '不作为偏差', d: '你更怕「出手失败」，不太怕「没出手错过机会」。', w: '研究发现，人常常把「做了而出错」看得比「没做而出错」更严重，即使后者风险更大。', f: '如果犹豫超过两秒，就按计划好的那一步走，不再重新想。', r: ['ritov1990'] },
+      { n: '优点用过头', d: '能扛是优点，但一直一个人扛，最累的是你，队友也习惯了不来帮。', w: '不少正面特质和表现之间是倒 U 形关系，过了某个点，好处就开始变成代价。', f: '如果已经连续扛了两波，就打信号让队友接手。', r: ['grant2011', 'le2011'] }
+    ]
+  },
+  'jungle-a': {
+    traits: [['动机', '追求一击得手的刺激和高光，抓到人的瞬间最过瘾。'], ['压力之下', '反应快，但兴奋时容易把风险看小。'], ['人际方式', '带动性强，常常先动手再通知队友。']],
+    style: [['决策习惯', '看到机会马上动，很少等信息补齐。'], ['资源观', '优先抓人和反野，野怪可以之后再刷。'], ['团战定位', '绕后切输出，专找落单的人。'], ['逆风反应', '越落后越想赌一波大的。']],
+    flaws: [
+      { n: '冲动的感觉寻求', d: '看到残血就想上，刺激感跑在判断前面。', w: '一项 260 名大学生的研究发现，各类冒险行为都和冲动的感觉寻求相关。', f: '如果想越塔追人，就先数一遍对面在场的人数，再按技能。', r: ['zuckerman2000'] },
+      { n: '只看得见目标', d: '盯着残血时，对面另外几个人从视野里消失了你也没反应。', w: '实验发现，注意力集中在一处时，眼前很明显的东西也可能看不到。', f: '如果开始追人，就每三秒扫一眼小地图。', r: ['simons1999'] },
+      { n: '沉没成本', d: '已经追了半张地图，就更舍不得放手，继续往里追。', w: '人投入了时间和精力之后更倾向于继续，还会高估成功的可能。', f: '如果追过一座塔的距离还没杀掉，就掉头。', r: ['arkes1985'] }
+    ]
+  },
+  'jungle-s': {
+    traits: [['动机', '享受「一切按计划走」的掌控感，也享受带着队友赢。', ['ryan2006']], ['压力之下', '局势乱的时候还能数时间、排优先级。'], ['人际方式', '愿意指挥也听得进反馈，让队友知道下一步要干嘛。']],
+    style: [['决策习惯', '先看资源刷新时间，再决定去哪。'], ['资源观', '把龙、塔和视野排在个人击杀前面。'], ['团战定位', '提前到位，用站位和时机替队友创造条件。'], ['逆风反应', '算清对面的资源空档，换一个能拿到的小目标。']],
+    perfect: '全队脑子里有同一张图，是你带出来的。一项模拟飞行作战的实验发现，队友对任务和配合的理解越一致，合作和表现越好。',
+    perfectRefs: ['mathieu2000'],
+    keep: '继续用一句话讲清目标和时间。'
+  },
+  'mid-a': {
+    traits: [['动机', '想打出决定比赛的一下，也享受被队友看到。'], ['压力之下', '关键时刻手不抖，越重要的团越专注。'], ['人际方式', '用结果说话，打完会告诉队友下一个目标。']],
+    style: [['决策习惯', '先找角度和对面的空档，再一次交完。'], ['资源观', '优先线权和大招时机，抓住爆发窗口。'], ['团战定位', '盯对面后排，打断关键输出。'], ['逆风反应', '等对面站位失误，用一次爆发翻盘。']],
+    perfect: '敢赌也赌得准，知道什么时候该全交，什么时候先留一手。',
+    keep: '继续先看对面关键技能交没交，再进场。'
+  },
+  'mid-s': {
+    traits: [['动机', '享受把局面想明白，靠判断赢。'], ['压力之下', '表面冷静，心里在反复比较各种可能。'], ['人际方式', '爱分析也爱提醒，但不太主动拍板。'], ['英雄偏好', '有研究发现，尽责性高的玩家更偏好控制型英雄（只比较了高低两端的玩家，全样本的相关很弱）。', ['wang2019']]],
+    style: [['决策习惯', '信息不够不出手，总想等到最优解。'], ['资源观', '清线和视野优先，冒险的资源不碰。'], ['团战定位', '站中后排，等对面交技能再放控制。'], ['逆风反应', '守高地等失误，很少主动找机会。']],
+    flaws: [
+      { n: '最大化倾向', d: '总想等最完美的时机，放完还在想是不是该早一点。', w: '研究发现，凡事都想选到最好的人更容易后悔，对自己的选择也更不满意。', f: '如果能命中两个人就放，不等三个。', r: ['schwartz2002'] },
+      { n: '越想越难选', d: '局面复杂的时候，你总在比较，出手就慢半拍。', w: '元分析发现，任务越难、偏好越不明确，选择带来的负担越明显；不过「选项多就难选」并非总是成立，另一项元分析的平均效应接近零。', f: '如果团战已经开打，就最多再等一秒。', r: ['chernev2015', 'scheibehenne2010'] },
+      { n: '顾不过来', d: '想把全局都算进去，反而漏掉眼前的人。', w: '判断局势靠持续感知和理解，而注意力和工作记忆都有上限。', f: '如果同时在想两件以上的事，就先处理离你最近的目标。', r: ['endsley1995'] }
+    ]
+  },
+  'adc-a': {
+    traits: [['动机', '成就感强，击杀、伤害、经济都想拿第一。', ['yee2006']], ['压力之下', '顺风很猛，被抢人头或被针对时情绪容易上来。'], ['人际方式', '和队友的关系常常围绕「资源给谁」。']],
+    style: [['决策习惯', '有人头就追，先打了再说。'], ['资源观', '想把经济和人头都集中到自己身上。'], ['团战定位', '找机会往前输出，站位偏激进。'], ['逆风反应', '靠单杀找回来，不太愿意等。']],
+    flaws: [
+      { n: '对奖励太敏感', d: '人头的即时反馈太爽，判断总往人头那边偏。', w: '人格研究里，行为激活系统强的人对眼前的奖励反应更强。', f: '如果残血离队友更近，就把人头让出去，转火下一个。', r: ['carver1994'] },
+      { n: '高估自己', d: '总觉得这波只有自己能收，于是一个人往前走。', w: '过度自信有一种就是「觉得自己比别人强」，人们常在这上面判断失准。', f: '如果身边没有前排，就退回到队友身后再输出。', r: ['moore2008'] },
+      { n: '沉没成本', d: '已经追了这么久，放掉太亏，于是继续追。', w: '人投入了时间和精力之后更倾向于继续，还会高估成功的可能。', f: '如果自己血量低于一半，就停止追击。', r: ['arkes1985'] }
+    ]
+  },
+  'adc-s': {
+    traits: [['动机', '愿意先投入、后收获，等装备成型时打出成果。'], ['压力之下', '被压也不急，能按自己的节奏补回来。'], ['人际方式', '信任队友的保护，到点就兑现承诺。']],
+    style: [['决策习惯', '算清经济和时间点，到了该打的时候绝不拖。'], ['资源观', '前期吃稳经济，中期开始和队伍一起拿目标。'], ['团战定位', '站在安全距离持续输出，打满全程。'], ['逆风反应', '守住发育，等装备差缩小再接团。']],
+    perfect: '既能忍也知道什么时候该出手：你的耐心不是拖延，是算好时间点的投入。',
+    keep: '继续守住「两件核心装备就跟团」这个节点。'
+  },
+  'sup-a': {
+    traits: [['动机', '享受带头和改变局势，一次好开团比人头更爽。'], ['压力之下', '局势紧的时候敢下决定，也扛得住开错的压力。'], ['人际方式', '外向、敢拍板，队友愿意跟着你。元分析里，外向性是和领导力相关最高的大五特质（r = .31）。', ['judge2002']]],
+    style: [['决策习惯', '看准站位和队友距离，果断先手。'], ['资源观', '不抢资源，把经济让给输出，靠控制制造价值。'], ['团战定位', '第一个进场，控住关键目标。'], ['逆风反应', '找对面落单的人开，一波换回节奏。']],
+    perfect: '开团前会先确认队友在身后，队友也读得懂你的动作。一项《英雄联盟》研究发现，这种不靠说话的默契比语言沟通作用更大。',
+    perfectRefs: ['kim2017'],
+    keep: '继续开团前打信号，等队友到位再进。'
+  },
+  'sup-s': {
+    traits: [['动机', '最大的满足来自队友因为自己活下来。'], ['压力之下', '替别人紧张，自己的危险反而最后才看到。'], ['人际方式', '细心、会安慰人，队伍气氛常靠你稳住。研究发现，团队成员觉得「说错话也安全」时，更愿意学习和调整。', ['edmondson1999']]],
+    style: [['决策习惯', '先看队友安全，再看自己能做什么。'], ['资源观', '经济和击杀都让出去，很少为自己争取。'], ['团战定位', '贴着输出站，谁靠近就控谁。'], ['逆风反应', '多做视野、多提醒，先保住队友。']],
+    flaws: [
+      { n: '只顾别人', d: '保护队友太投入，自己的血量和位置都排在最后。', w: '研究把这叫「无节制的关怀」：只关注别人而忽略自己，和普通的关心不同，它和心理困扰相关。', f: '如果自己血量低于三成，就先退一步，不替人挡。', r: ['fritz1998'] },
+      { n: '靠别人评价自己', d: '队友一句抱怨，你就觉得是自己没打好。', w: '同一研究发现，这类人更依赖别人来获得自我评价，也更容易过度卷入别人的事。', f: '如果队友抱怨，就先看自己今天定的那件事做到了没有。', r: ['fritz1998'] },
+      { n: '优点用过头', d: '什么都替队友想好了，队友反而不看地图、不躲技能。', w: '不少正面特质和表现之间是倒 U 形关系，过了某个点，好处就开始变成代价。', f: '如果队友状态不错，就把盯人的时间分一半给视野。', r: ['grant2011'] }
+    ]
+  },
+  'top-a-x': {
+    traits: [['动机', '想证明自己能打，输了更想马上赢回来。'], ['压力之下', '越死越上头，判断跟着情绪走。'], ['人际方式', '不太听建议，失败时容易先找外部原因。']],
+    style: [['决策习惯', '不算伤害，看到人就上。'], ['资源观', '经济常常送给对面，还没成型就开打。'], ['团战定位', '团还没开，人已经倒了。'], ['逆风反应', '继续单挑，想一个人翻盘。']],
+    flaws: [
+      { n: '过度自信', d: '总觉得这一下能杀，实际伤害差一截。', w: '研究把过度自信分成三种：高估自己的表现、觉得比别人强、对判断过于确信。', f: '如果想越塔，就先确认对面血量低于你一套伤害，否则放弃。', r: ['moore2008'] },
+      { n: '上头', d: '连死之后想马上打回来，结果越打越差。', w: '玩家描述的「上头」同时包含负面情绪、思路变差和操作下滑；数据也显示，同一场次连续对局时个人表现会逐渐下滑。', f: '如果连死两次，就回塔下补三波兵再说。', r: ['cregan2025', 'sapienza2018'] },
+      { n: '赢了算我的', d: '赢了是我强，输了是塔太疼、队友不来。', w: '一项 266 个研究的元分析发现，人普遍把好事归功于自己、坏事推给外部，这个偏差很大（亚洲样本明显小一些）。', f: '如果这局输了，就先想一条自己能改的操作，再看队友。', r: ['mezulis2004'] }
+    ]
+  },
+  'top-s-x': {
+    traits: [['动机', '不犯错比赢更重要。'], ['压力之下', '一有压力就往后缩，用「不动」来避免失误。'], ['人际方式', '存在感低，队友常常不知道你在干嘛。']],
+    style: [['决策习惯', '能不动就不动。'], ['资源观', '守着线和塔，别的资源都放弃。'], ['团战定位', '经常不到场。'], ['逆风反应', '守一座对面根本没来打的塔。']],
+    flaws: [
+      { n: '不作为偏差', d: '不动就不会犯错，所以干脆不动。', w: '研究发现，人常常把「做了而出错」看得比「没做而出错」更严重，即使后者风险更大。', f: '如果两波兵线内没有任何动作，就主动往前走一步。', r: ['ritov1990'] },
+      { n: '社会懈怠', d: '觉得有四个队友在，少我一个没差。', w: '一项 78 个研究的元分析发现，人在集体任务里普遍比单干时少出力（在东方文化中相对弱一些）。', f: '如果队友打信号集合，就先动身，路上再判断。', r: ['karau1993'] },
+      { n: '现状偏差', d: '塔下是熟悉的位置，一直不愿离开。', w: '实验和真实选择都发现，人会不成比例地留在现状，哪怕换一个选择可能更好。', f: '如果兵线推过河，就走到河道看一眼。', r: ['samuelson1988'] }
+    ]
+  },
+  'jungle-a-x': {
+    traits: [['动机', '想要刺激，动起来比想清楚更重要。'], ['压力之下', '送了也不停，靠下一波冲淡上一波。'], ['人际方式', '常常一个人行动，队友跟不上也拉不回来。']],
+    style: [['决策习惯', '先冲进去，再看对面有几个人。'], ['资源观', '经济和节奏都送给了对面打野。'], ['团战定位', '开团前就已经减员。'], ['逆风反应', '越落后越要反野。']],
+    flaws: [
+      { n: '不想后果就动手', d: '进对面野区之前，根本没想过被抓怎么办。', w: '冲动不是一种东西，研究把它分成情绪急迫、缺乏预谋、缺乏坚持、感觉寻求四个方面，你主要卡在「缺乏预谋」。', f: '如果要进对面野区，就先想好退路再走。', r: ['whiteside2001'] },
+      { n: '对判断过于确信', d: '「对面肯定不在这」，说得很肯定，其实没看到。', w: '对自己的判断过于确信，是过度自信的一种常见形式。', f: '如果对面三个人以上不在视野里，就不进对面野区。', r: ['moore2008'] },
+      { n: '越打越差还不停', d: '连送几波之后，还是马上开下一把。', w: '《英雄联盟》的对局数据显示，同一场次连续对局时个人表现会逐渐下滑，经验多的玩家下滑少一些。', f: '如果连输两把，就起来歇十分钟。', r: ['sapienza2018'] }
+    ]
+  },
+  'jungle-s-x': {
+    traits: [['动机', '享受效率和经济数字，把路线刷顺了就满足。'], ['压力之下', '局势一乱，就躲回熟悉的路线里。'], ['人际方式', '队友呼救时容易当没听见。']],
+    style: [['决策习惯', '按定好的路线走，不因局势改变。'], ['资源观', '野怪一只不漏，龙和塔反而错过。'], ['团战定位', '到得晚，经常只赶上收尾。'], ['逆风反应', '继续刷，指望后期。']],
+    flaws: [
+      { n: '现状偏差', d: '路线定了就不改，哪怕三条路都在喊救命。', w: '实验和真实选择都发现，人会不成比例地留在现状，哪怕换一个选择可能更好。', f: '如果有队友被两个人以上围攻，就放下野怪过去。', r: ['samuelson1988'] },
+      { n: '局势感不足', d: '只更新自己这片地图，不知道别处发生了什么。', w: '判断局势靠持续感知和理解，而注意力和工作记忆都有上限，不主动看就会漏。', f: '如果刷完一组野，就看一眼三条路的血量。', r: ['endsley1995'] },
+      { n: '计划只有你知道', d: '你脑子里有路线，队友完全不知道，也就没法配合。', w: '一项模拟飞行作战的实验发现，队友对任务和配合的理解越一致，合作和表现越好。', f: '如果要去刷远处的野区，就打个信号告诉队友。', r: ['mathieu2000'] }
+    ]
+  },
+  'mid-a-x': {
+    traits: [['动机', '很想被看到，高光比结果更重要。'], ['压力之下', '越重要的时候越想秀，手反而变形。'], ['人际方式', '打空之后不太愿意认。']],
+    style: [['决策习惯', '冷却一好就全交。'], ['资源观', '大招经常交给小兵或者坦克。'], ['团战定位', '第一波技能空了，后面就没事可做。'], ['逆风反应', '想靠一次秀全部翻回来。']],
+    flaws: [
+      { n: '压力下失常', d: '越是关键团越想打漂亮，反而打不中。', w: '实验发现，压力会让人过度关注自己的动作，打乱原本熟练的操作。', f: '如果是关键团，就只想目标在哪，不想动作。', r: ['baumeister1984'] },
+      { n: '过度自信', d: '觉得这一套一定能中，所以一次全交。', w: '研究把过度自信分成三种：高估自己的表现、觉得比别人强、对判断过于确信。', f: '如果没有控制技能配合，就先放一个技能试探。', r: ['moore2008'] },
+      { n: '事后嘴硬', d: '打中了是技术，打空了是对面运气好。', w: '一项 266 个研究的元分析发现，人普遍把好事归功于自己、坏事推给外部，这个偏差很大（亚洲样本明显小一些）。', f: '如果一波技能全空，就回想一下对面当时往哪走。', r: ['mezulis2004'] }
+    ]
+  },
+  'mid-s-x': {
+    traits: [['动机', '想把每件事做到位，所以迟迟不动身。'], ['压力之下', '事情越多，越想先做完手上的。'], ['人际方式', '总说马上到，队友慢慢就不指望了。']],
+    style: [['决策习惯', '总觉得再清一波更好。'], ['资源观', '兵线很干净，可是没换成任何目标。'], ['团战定位', '经常错过，只赶上结尾。'], ['逆风反应', '继续清线，等别人打开局面。']],
+    flaws: [
+      { n: '最大化倾向', d: '总想把线清干净再走，于是永远晚一步。', w: '研究发现，凡事都想选到最好的人更容易后悔，对自己的选择也更不满意。', f: '如果队友开始打团，就放下兵线立刻走。', r: ['schwartz2002'] },
+      { n: '局势感不足', d: '盯着中路这一块，看不到队友正在等你。', w: '判断局势靠持续感知和理解，而注意力和工作记忆都有上限，不主动看就会漏。', f: '如果清完一波线，就看一眼两边的情况。', r: ['endsley1995'] },
+      { n: '社会懈怠', d: '觉得团战有他们就够，自己晚点去也行。', w: '一项 78 个研究的元分析发现，人在集体任务里普遍比单干时少出力（在东方文化中相对弱一些）。', f: '如果说了「马上到」，就真的立刻动身。', r: ['karau1993'] }
+    ]
+  },
+  'adc-a-x': {
+    traits: [['动机', '人头带来的奖励感太强，比活着更诱人。'], ['压力之下', '越残越想拿下这个人头。'], ['人际方式', '和队友抢资源，出事容易怪队友不跟。']],
+    style: [['决策习惯', '只看对面血条，不看自己。'], ['资源观', '经济常常换成了复活时间。'], ['团战定位', '追出阵型，被回头带走。'], ['逆风反应', '靠追杀找回来，结果越追越亏。']],
+    flaws: [
+      { n: '对奖励太敏感', d: '看到残血，别的信息都不重要了。', w: '人格研究里，行为激活系统强的人对眼前的奖励反应更强。', f: '如果自己血量低于一半，就先不追。', r: ['carver1994'] },
+      { n: '沉没成本', d: '已经追了半张地图，放弃太亏，于是继续。', w: '人投入了时间和精力之后更倾向于继续，还会高估成功的可能。', f: '如果追过一座塔的距离还没杀掉，就掉头。', r: ['arkes1985'] },
+      { n: '只看得见目标', d: '盯着对面血条，自己的血条和身后的人都看不到。', w: '实验发现，注意力集中在一处时，眼前很明显的东西也可能看不到。', f: '如果开始追人，就每三秒看一眼自己的血量。', r: ['simons1999'] }
+    ]
+  },
+  'adc-s-x': {
+    traits: [['动机', '总想等万事俱备，眼下的机会都觉得不够好。'], ['压力之下', '一有风险就回去补兵，靠发育躲开打架。'], ['人际方式', '很少参与团队决定，队友觉得你不在。']],
+    style: [['决策习惯', '再等等，再出一件。'], ['资源观', '经济很高，但一直没换成战果。'], ['团战定位', '站得太后，或者根本没来。'], ['逆风反应', '继续发育，比赛先结束了。']],
+    flaws: [
+      { n: '过度为长远忍耐', d: '一直选长远收益，把现在该打的团都放过了。', w: '研究发现，当初选了「忍耐」的人，隔得越久，越后悔错过的东西。', f: '如果有两件核心装备了，就跟下一波团。', r: ['kivetz2006'] },
+      { n: '不作为偏差', d: '怕打团失误，干脆不打。', w: '研究发现，人常常把「做了而出错」看得比「没做而出错」更严重，即使后者风险更大。', f: '如果队友已经开团，就先进到输出距离再说。', r: ['ritov1990'] },
+      { n: '社会懈怠', d: '觉得前面四个人能打就行，自己后期再来。', w: '一项 78 个研究的元分析发现，人在集体任务里普遍比单干时少出力（在东方文化中相对弱一些）。', f: '如果龙要刷新了，就提前十秒往那边走。', r: ['karau1993'] }
+    ]
+  },
+  'sup-a-x': {
+    traits: [['动机', '享受先手的刺激，开了再说。'], ['压力之下', '局面越僵，越想开一把破局。'], ['人际方式', '相信队友会跟，但很少确认。']],
+    style: [['决策习惯', '看到人就闪现进场。'], ['资源观', '闪现和大招经常交在无效开团上。'], ['团战定位', '一个人进去，一个人倒下。'], ['逆风反应', '继续硬开，想靠一波翻盘。']],
+    flaws: [
+      { n: '默契断层', d: '你以为大家都懂这波要开，其实只有你知道。', w: '实验发现队友对任务和配合的理解越一致，合作和表现越好；《英雄联盟》研究也发现默契比语言沟通作用更大。', f: '如果身后看不到两个队友，就不开。', r: ['mathieu2000', 'kim2017'] },
+      { n: '冲动的感觉寻求', d: '开团的那一下太爽，判断常常跟不上手。', w: '一项 260 名大学生的研究发现，各类冒险行为都和冲动的感觉寻求相关。', f: '如果想开团，就先打一个信号，等一秒。', r: ['zuckerman2000'] },
+      { n: '对判断过于确信', d: '「他们肯定会跟」，说得很肯定，其实没看过。', w: '对自己的判断过于确信，是过度自信的一种常见形式。', f: '如果这波开错了，下一波就先看队友的位置。', r: ['moore2008'] }
+    ]
+  },
+  'sup-s-x': {
+    traits: [['动机', '跟着别人就有安全感，怕自己做决定。'], ['压力之下', '队友倒了，也只是跟着倒。'], ['人际方式', '把自己的价值都放在别人身上。']],
+    style: [['决策习惯', '队友去哪就去哪。'], ['资源观', '很少做视野，也很少主动找机会。'], ['团战定位', '技能常常忘了放。'], ['逆风反应', '继续跟着，没有自己的判断。']],
+    flaws: [
+      { n: '只顾别人', d: '全程贴着队友，自己该做的事都放下了。', w: '研究把这叫「无节制的关怀」：只关注别人而忽略自己，和普通的关心不同，它和心理困扰相关。', f: '如果队友暂时安全，就去做一个视野再回来。', r: ['fritz1998'] },
+      { n: '社会懈怠', d: '有输出在，技能放不放好像都无所谓。', w: '一项 78 个研究的元分析发现，人在集体任务里普遍比单干时少出力（在东方文化中相对弱一些）。', f: '如果对面有人靠近队友，就先把控制放出去。', r: ['karau1993'] },
+      { n: '只看得见队友', d: '眼里只有身边这一个人，对面绕后也看不到。', w: '实验发现，注意力集中在一处时，眼前很明显的东西也可能看不到。', f: '如果跟着队友走，就每三秒看一眼小地图。', r: ['simons1999'] }
+    ]
+  }
+};
+
+// “这份分析靠谱吗”：把局限直接写给读的人看。每条末尾是文献
+const TRUST_NOTES = [
+  ['这是娱乐测评，不是心理量表。', '这里的 15 道题没有做过信度和效度检验，也测不出大五人格。上面写的是这类打法常见的倾向，不是对你本人的诊断。'],
+  ['位置和性格只有弱关联。', '3220 名《英雄联盟》玩家的调查里，位置偏好和性格的整体相关（典型相关）最高 .22，另两组 .16 和 .10，也就是只能共同解释 1% 到 5% 的差异。这项研究只调查了《英雄联盟》，还不能直接搬到王者荣耀。', ['sajinovic2024', 'wang2019']],
+  ['打得好不好，性格也解释不了多少。', '444 名玩家的研究里，人格只解释了段位差异的 2.8%，并且只有自恋这一项显著。', ['horne2023']],
+  ['“缺点”里的概念大多是类比。', '现状偏差、社会懈怠这些概念主要来自实验室、职场和消费研究，还没有人在王者荣耀里验证过。'],
+  ['“完美”是这个测评的游戏设定，不是科学结论。', '每条路有 4 种人格，这里只给 1 种免去缺点分析。心理学上每种人格特质都有利有弊，并不存在无条件最优的性格。', ['nettle2006', 'grant2011']],
+  ['改进办法写成“如果……就……”是有依据的。', '94 项检验的元分析发现，这样具体的计划对达成目标有中到大的效果（d = .65）。不过这些研究不是在游戏里做的。', ['gollwitzer2006']],
+  ['觉得“说的就是我”，也别太当真。', '笼统的描述也会让人觉得很准，这叫巴纳姆效应。', ['forer1949']],
+  ['“载荷”是什么？', '统计里表示某一项和一组特质绑得多紧的数字，绝对值越接近 1 越紧，正负号表示方向。']
+];
+// 第几条文献按当前页面上出现的先后编号，只列这一页真正引用到的
+function analysisHTML(res) {
+  const key = res.key, role = res.ranked[0], a = ANALYSIS[key], c = ROLES[role].color, order = [];
+  const cite = refs => (refs || []).map(k => {
+    if (!order.includes(k)) order.push(k);
+    const n = order.indexOf(k) + 1;
+    return `<button type="button" class="cite" data-ref="${k}" data-n="${n}" aria-label="查看参考文献 ${n}">${n}</button>`;
+  }).join('');
+  const row = ([k, v, refs]) => `<div class="kv-row"><b>${k}</b><span>${v}${cite(refs)}</span></div>`;
+  const flaws = a.flaws ? `
+      <div class="panel" style="--c:${c}">
+        <h3 class="sec-title">缺点分析</h3>
+        <p class="muted" style="font-size:13px">这是这种打法容易掉进去的坑，不是给你下诊断。改进办法都写成了“如果……就……”，下一局就能用。</p>
+        <div class="flaws">${a.flaws.map((f, i) => `
+          <article class="flaw">
+            <h4><i>${i + 1}</i>${f.n}</h4>
+            <dl>
+              <div><dt>表现</dt><dd>${f.d}</dd></div>
+              <div><dt>为什么</dt><dd>${f.w}${cite(f.r)}</dd></div>
+              <div class="fix"><dt>改进</dt><dd>${f.f}</dd></div>
+            </dl>
+          </article>`).join('')}</div>
+      </div>` : `
+      <div class="panel perfect-panel">
+        <div class="perfect-head"><b>完美人格</b><span>这条路 4 种人格里，只有这一种</span></div>
+        <p class="perfect-none">缺点分析：<b>未检出</b></p>
+        <p>${a.perfect}${cite(a.perfectRefs)}</p>
+        <div class="evi" style="--c:var(--gold)"><b class="lbl">继续保持</b>${a.keep}</div>
+        <p class="muted" style="font-size:12px">“完美”是这个测评的游戏设定。现实里每种性格都有得有失，没有无条件最优的答案。${cite(['nettle2006'])}</p>
+      </div>`;
+  const traits = `
+      <div class="panel" style="--c:${c}">
+        <h3 class="sec-title">性格分析</h3>
+        <div class="kv">${a.traits.map(row).join('')}${row(['冒险倾向', STYLE_EVIDENCE[res.style], ['crowe1997', 'higgins1997']])}</div>
+        <div class="evi"><b class="lbl">研究怎么说</b>${LANE_EVIDENCE[role]}${cite(['sajinovic2024'])}这只是群体平均上的微弱倾向，不能用来判断你本人。</div>
+      </div>`;
+  const style = `
+      <div class="panel" style="--c:${c}">
+        <h3 class="sec-title">游戏风格分析</h3>
+        <div class="kv">${a.style.map(row).join('')}</div>
+      </div>`;
+  const notes = TRUST_NOTES.map(([h, t, refs]) => `<li><b>${h}</b>${t}${cite(refs)}</li>`).join('');
+  const trust = `
+      <div class="panel">
+        <details class="trust">
+          <summary>这份分析靠谱吗？</summary>
+          <ul class="list trust-list">${notes}</ul>
+          <h4 class="refs-title">本页参考文献</h4>
+          <ol class="refs">${order.map(k => `<li>${REFS[k][0]} <a href="https://doi.org/${REFS[k][1]}" target="_blank" rel="noopener">doi:${REFS[k][1]}</a></li>`).join('')}</ol>
+        </details>
+      </div>`;
+  return { top: flaws + traits + style, trust };
+}
+// 点文献角标：从底部弹出这一条，不用离开正在读的位置
+function showCite(btn) {
+  const [text, doi] = REFS[btn.dataset.ref];
+  let el = $('cite-pop');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'cite-pop'; el.className = 'cite-pop'; el.setAttribute('role', 'dialog');
+    document.body.appendChild(el);
+    el.addEventListener('click', e => { if (e.target.closest('.x')) el.hidden = true; });
+    document.addEventListener('click', e => { if (!e.target.closest('#cite-pop, .cite')) el.hidden = true; });
+  }
+  el.innerHTML = `<button type="button" class="x" aria-label="关闭">×</button><b>文献 ${btn.dataset.n}</b><p>${text}</p><a href="https://doi.org/${doi}" target="_blank" rel="noopener">doi:${doi}</a>`;
+  el.hidden = false;
 }
 
 /* ---------- 契合度 ---------- */
@@ -3135,7 +3486,7 @@ function compat(meKey, frKey) {
   let special = '';
   if (bm === bf) special = '你们是同一种人格，想法几乎一模一样。';
   if (PERSONAS[bm].best === bf || PERSONAS[bf].best === bm) { score = Math.max(score, 97); special = 'TA 正好是你的最佳搭档人格，命中注定要一起开黑。'; }
-  else if (PERSONAS[bm].fear === bf) special = 'TA 是你在峡谷里最怕遇到的人格，还好这次是队友。';
+  else if (PERSONAS[bm].fear === bf) special = isPerfect(meKey) ? 'TA 是你在峡谷里的最强对手，还好这次是队友。' : 'TA 是你在峡谷里最怕遇到的人格，还好这次是队友。';
   score = Math.min(99, score) - bads * 6;
   if (bads === 2) special += '你们俩都是下饭版，开黑主打一个快乐。';
   else if (bads === 1) special += `${isBad(meKey) ? '你' : 'TA'}是下饭版，开黑时记得多担待。`;
@@ -3233,7 +3584,7 @@ function radarSVG(match) {
 function shareText(res) {
   const p = PERSONAS[res.key], m = MEME[res.key];
   const zero = m.nf.find(([, v]) => !v)[0];
-  return `我在「峡谷玩家风格测评」被鉴定为【${m.stamp}】，人格是「${p.title}」（${personaLabel(res.key)}）。\n成分表：${m.nf[0][0]} ${m.nf[0][1]}%，${zero}未检出。\n发疯语录：“${m.crazy}”\n${res.score !== null && res.meta && GAMES[res.meta.trial] ? `实操考核：${GAMES[res.meta.trial].name} ${res.score} 分（${tierOf(res.score)}），不服来挑战。
+  return `我在「峡谷玩家风格测评」被鉴定为【${m.stamp}】，人格是「${p.title}」（${personaLabel(res.key)}）。${isPerfect(res.key) ? '20 种人格里只有 5 种完美人格，我就是其中之一。' : ''}\n成分表：${m.nf[0][0]} ${m.nf[0][1]}%，${zero}未检出。\n发疯语录：“${m.crazy}”\n${res.score !== null && res.meta && GAMES[res.meta.trial] ? `实操考核：${GAMES[res.meta.trial].name} ${res.score} 分（${tierOf(res.score)}），不服来挑战。
 ` : ''}来查查你是什么成分，看看我们开黑契合度有多高：${inviteLink(res.key, res.score)}`;
 }
 function showResult(res, intro) {
@@ -3306,7 +3657,7 @@ function renderResult(res) {
       <span class="num"><span data-to="${pct(k)}">0</span>%</span></div>`).join('');
   const relCard = (label, k) => `<div class="rel-card">${thumb(k)}<div><small>${label}</small><b>${PERSONAS[k].title}</b><div class="sub">${personaLabel(k)}</div></div></div>`;
   const subP = PERSONAS[subRole + '-' + res.style];
-  const dex = ALL_ORDER.map(k => `<div class="dex-item${k === key ? ' me' : (k === state.friend ? ' fr' : '')}">${thumb(k)}<div><b>${PERSONAS[k].title}</b><span>${personaLabel(k)}</span></div></div>`).join('');
+  const dex = ALL_ORDER.map(k => `<div class="dex-item${isPerfect(k) ? ' perfect' : ''}${k === key ? ' me' : (k === state.friend ? ' fr' : '')}">${thumb(k)}<div><b>${PERSONAS[k].title}</b><span>${personaLabel(k)}</span></div></div>`).join('');
   // 弹幕：三条专属评价 + 三条通用梗，分三道错开滚动
   const m = MEME[key];
   const extra = shuffled(DANMU_ALL.length).map(i => DANMU_ALL[i]);
@@ -3322,6 +3673,7 @@ function renderResult(res) {
     </div>`;
   const ach = achievements(res);
   const tab0 = state.friend ? 2 : 0;
+  const perfect = isPerfect(key), analysis = analysisHTML(res);
 
   $('screen-result').innerHTML = `
     <div class="stage">
@@ -3329,7 +3681,7 @@ function renderResult(res) {
         <i class="glare"></i><i class="holo"></i>
         <div class="poster-top"><span>峡谷人格档案</span><span>No.<b>${no}</b> / 20</span></div>
         <div class="poster-art"><img src="${artURL(key, 720)}" alt="${p.title}人格插画"><div class="badge">${emblem(mainRole)}</div>${stampHTML(key)}${res.score !== null ? `<div class="sc-badge${res.score >= PASS ? '' : ' low'}"><b>${res.score}</b><small>${tierOf(res.score)}</small></div>` : ''}</div>
-        <div class="tags"><span class="tag role">主位置 · ${r.name} <span data-to="${pct(mainRole)}">0</span>%</span><span class="tag">${res.style === 'a' ? '进攻型' : '稳健型'}</span>${trialTag(res)}${isBad(key) ? '<span class="tag bad">下饭版</span>' : ''}</div>
+        <div class="tags"><span class="tag role">主位置 · ${r.name} <span data-to="${pct(mainRole)}">0</span>%</span><span class="tag">${res.style === 'a' ? '进攻型' : '稳健型'}</span>${trialTag(res)}${isBad(key) ? '<span class="tag bad">下饭版</span>' : ''}${perfect ? '<span class="tag perfect">完美人格</span>' : ''}</div>
         <h1 class="gold-text">${p.title}</h1>
         <p class="slogan">${p.slogan}</p>
         <div class="hash">${p.tags.map(t => `<span>${t}</span>`).join('')}</div>
@@ -3369,6 +3721,7 @@ function renderResult(res) {
         <div class="ach">${ach.map(([g, n, d]) => `<div class="ach-item"><span class="ach-ico">${g}</span><div><b>${n}</b><span>${d}</span></div></div>`).join('')}</div>
       </div>
 
+      <button type="button" class="btn-ghost gold goto-analysis" id="goto-analysis">${perfect ? '看看你为什么是完美人格' : '看你的性格和缺点分析'}</button>
     </div>
 
     <div class="pane" data-i="1"${tab0 === 1 ? '' : ' hidden'}>
@@ -3376,10 +3729,11 @@ function renderResult(res) {
         <h3 class="sec-title">人格解读</h3>
         <p>${p.desc}</p>
         <div class="moment"><b class="lbl">你的名场面</b>${p.moment}</div>
-        <div class="note roast"><b class="lbl">你的槽点</b>${p.roast}</div>
-        <div class="note"><b class="lbl">变强建议</b>${p.tip}</div>
+        ${perfect ? '' : `<div class="note roast"><b class="lbl">你的槽点</b>${p.roast}</div>
+        <div class="note"><b class="lbl">变强建议</b>${p.tip}</div>`}
         <p class="muted" style="font-size:14px">副位置是 <b style="color:${ROLES[subRole].color};font-weight:500">${ROLES[subRole].name}</b>（${pct(subRole)}%），换到这个位置你会是「${subP.title}」。</p>
       </div>
+${analysis.top}
 
       <div class="panel">
         <h3 class="sec-title">五路匹配度</h3>
@@ -3387,9 +3741,9 @@ function renderResult(res) {
         <p class="muted" style="font-size:12px">按第一关 10 道题的选择折算：主位置算 100%，五路合计 400%。</p>
       </div>
 
-      <div class="two-col">
+      <div class="${perfect ? '' : 'two-col'}">
         <div class="panel"><h3 class="sec-title">你的优势</h3><ul class="list">${r.good.map(t => `<li>${t}</li>`).join('')}</ul></div>
-        <div class="panel"><h3 class="sec-title">要注意</h3><ul class="list">${r.watch.map(t => `<li>${t}</li>`).join('')}</ul></div>
+        ${perfect ? '' : `<div class="panel"><h3 class="sec-title">要注意</h3><ul class="list">${r.watch.map(t => `<li>${t}</li>`).join('')}</ul></div>`}
       </div>
 
       <div class="panel">
@@ -3397,7 +3751,7 @@ function renderResult(res) {
         <p class="muted" style="font-size:14px">适合类型：${r.type}</p>
         <div class="heroes">${p.heroes.map(([h, why]) => `<div class="hero-row"><b>${h}</b><span>${why}</span></div>`).join('')}</div>
       </div>
-
+${analysis.trust}
     </div>
 
     <div class="pane" data-i="2"${tab0 === 2 ? '' : ' hidden'}>
@@ -3414,7 +3768,7 @@ function renderResult(res) {
 
       <div class="panel">
         <h3 class="sec-title">峡谷关系</h3>
-        <div class="rel">${relCard('最佳搭档', p.best)}${relCard('最怕遇到', p.fear)}</div>
+        <div class="rel">${relCard('最佳搭档', p.best)}${relCard(perfect ? '最强对手' : '最怕遇到', p.fear)}</div>
       </div>
 
     </div>
@@ -3422,7 +3776,7 @@ function renderResult(res) {
     <div class="pane" data-i="3"${tab0 === 3 ? '' : ' hidden'}>
       <div class="panel">
         <h3 class="sec-title">人格图鉴</h3>
-        <p class="muted" style="font-size:13px">每种人格都有高光版和下饭版，左边高光，右边下饭，一共 20 种。</p>
+        <p class="muted" style="font-size:13px">每种人格都有高光版和下饭版，左边高光，右边下饭，一共 20 种。每条路只有 1 种完美人格，一共 5 种。</p>
         <div class="dex">${dex}</div>
       </div>
 
@@ -3470,6 +3824,8 @@ function renderResult(res) {
     if (window.scrollY > top + 2) window.scrollTo({ top, behavior: REDUCE ? 'auto' : 'smooth' });
   });
   requestAnimationFrame(moveInk); setTimeout(moveInk, 80);
+  $('goto-analysis').onclick = () => tabs.querySelector('.tab[data-i="1"]').click();
+  panes[1].addEventListener('click', e => { const b = e.target.closest('.cite'); if (b) showCite(b); });
   $('code-form').addEventListener('submit', e => {
     e.preventDefault();
     const pc = parseCode($('friend-code').value), fk = pc && pc.key;
@@ -3617,7 +3973,7 @@ async function drawPoster(res) {
   // 标签
   ctx.textAlign = 'center';
   ctx.font = `30px ${BODY}`; ctx.fillStyle = c;
-  ctx.fillText(`主位置 · ${ROLES[mainRole].name}  |  ${res.style === 'a' ? '进攻型' : '稳健型'}${isBad(key) ? '  |  下饭版' : ''}`, W / 2, 775);
+  ctx.fillText(`主位置 · ${ROLES[mainRole].name}  |  ${res.style === 'a' ? '进攻型' : '稳健型'}${isBad(key) ? '  |  下饭版' : ''}${isPerfect(key) ? '  |  完美人格' : ''}`, W / 2, 775);
   // 人格名（毛笔字，先描一圈深色边再填金）
   ctx.font = `138px ${BRUSH}`;
   g = ctx.createLinearGradient(0, 783, 0, 915);
@@ -3873,11 +4229,6 @@ $('btn-mute').onclick = () => {
 const hashMatch = location.hash.match(/^#duo-([a-z]{2,3}(?:-\d{1,3})?)$/i);
 if (hashMatch) { const pc = parseCode(hashMatch[1]); if (pc) { state.friend = pc.key; state.friendScore = pc.score; } }
 try { Sound.on = localStorage.getItem(MUTE_KEY) !== '1'; } catch (e) {}
-// 微信内置浏览器：试着收起底部的前进后退栏（微信的老接口，部分版本不认，不生效也没影响）；顶部标题栏是微信自己的，网页去不掉
-(() => {
-  const hide = () => { try { window.WeixinJSBridge.call('hideToolbar'); } catch (e) {} };
-  if (window.WeixinJSBridge) hide(); else document.addEventListener('WeixinJSBridgeReady', hide, false);
-})();
 // 开场加载页：等字体准备好（最多 2.2 秒、至少 0.7 秒），进度条走满再淡出；4 秒后无论如何都撤掉
 (() => {
   const sp = $('splash'), fill = $('sp-fill'), t0 = performance.now();
